@@ -718,53 +718,71 @@
     pointer-events: auto;
   }
   
-  /* Responsive Styles */
-  @media (max-width: 1024px) {
-    .grid-3-col {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
   @media (max-width: 768px) {
     section {
       padding: var(--space-2xl) 0;
     }
-    
+
     .menu-toggle {
       display: block;
-      z-index: 200;
+      z-index: 200; /* Keep z-index high for toggle button */
     }
-    
+
     .nav-menu {
-      display: none;
-      position: fixed;
-      top: 0;
+      display: none; /* Initially hidden */
+      position: absolute; /* Position it relative to the header */
+      top: 100%; /* Position it right below the header */
       left: 0;
-      right: 0;
-      bottom: 0;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
+      right: 0; /* Stretch to the full width of the header */
+      background-color: rgba(255, 255, 255, 0.98); /* Same background */
+      backdrop-filter: blur(10px); /* Same blur */
       -webkit-backdrop-filter: blur(10px);
-      padding: var(--space-2xl) 0;
-      z-index: 100;
+      padding: var(--space-md) 0; /* Reduced padding */
+      z-index: 90; /* Lower z-index than toggle, below header content */
+      flex-direction: column; /* Stack menu items vertically */
+      align-items: stretch; /* Stretch items to full width */
+      margin-top: 0; /* Reset margin */
+      border-top: 1px solid var(--color-light-gray); /* Separator line */
+      transform-origin: top center; /* For animation origin */
+      max-height: 0; /* Initially no height for dropdown animation */
+      overflow: hidden; /* Hide content when height is 0 */
+      transition: max-height 0.3s ease-in-out; /* Smooth height transition */
     }
-    
+
     .nav-menu.active {
-      display: flex;
+      display: block; /* Show as block when active (dropdown) */
+      max-height: 800px; /* Example: Large height to accommodate menu, adjust as needed. Or use '100vh' if you expect very long menus and want scroll */
+      /* No need to redefine other properties, they are already set above */
     }
-    
+
     .nav-menu li {
-      margin: var(--space-sm) 0;
+      margin: 0; /* No vertical margin between list items here */
+      border-bottom: 1px solid var(--color-light-gray); /* Separator between links */
     }
-    
+
+    .nav-menu li:last-child {
+      border-bottom: none; /* Remove border from last item */
+    }
+
     .nav-menu a {
-      font-size: 1.25rem;
-      padding: var(--space-sm) var(--space-lg);
+      font-size: 1.125rem; /* Slightly smaller font in dropdown */
+      padding: var(--space-sm) var(--space-lg); /* Adjusted padding */
+      display: block; /* Make links fill li width for click area */
+      text-align: left; /* Align text to the left in dropdown */
     }
-    
+
+    .nav-menu a::after {
+      display: none; /* Remove underline effect in dropdown */
+    }
+
+    .nav-contact-btn {
+      margin: var(--space-md) var(--space-lg); /* Add margin for button in dropdown */
+      width: calc(100% - 2 * var(--space-lg)); /* Button width minus padding */
+      display: block; /* Make button full width */
+      text-align: center; /* Center text in button */
+    }
+
+
     .grid-2-col,
     .grid-3-col {
       grid-template-columns: 1fr;
