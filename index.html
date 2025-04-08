@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WebFramer: Affordable, fast, and modern static websites with free hosting. Minimalist design, maximum impact.">
+    <title>WebFramer - Modern & Affordable Static Websites</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <header data-aos="fade-down">
+        <nav class="container">
+            <a href="#" class="logo">WebFramer</a>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#why-us">Why Us?</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="menu-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1 data-aos="fade-up">Simple. Fast. Affordable.</h1>
+                <p class="subtitle" data-aos="fade-up" data-aos-delay="100">Get a professional static website that looks great, loads quickly, and doesn't cost a fortune. Perfect for your online presence.</p>
+                <a href="#contact" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">Let's Build Your Site</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="content-section">
+            <div class="container">
+                <h2 data-aos="fade-up">What We Do Best</h2>
+                <div class="service-grid">
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="0">
+                        <div class="icon-wrapper"><i class="fas fa-pencil-ruler icon"></i></div>
+                        <h3>Clean Design</h3>
+                        <p>Modern, minimalist websites focused on clarity and user experience.</p>
+                    </div>
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                       <div class="icon-wrapper"> <i class="fas fa-code icon"></i></div>
+                        <h3>Static Site Build</h3>
+                        <p>Fast, secure HTML, CSS & JS sites. No complex backends needed.</p>
+                    </div>
+                    <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                       <div class="icon-wrapper"> <i class="fas fa-mobile-alt icon"></i></div>
+                        <h3>Responsive Layout</h3>
+                        <p>Perfect viewing experience on desktops, tablets, and phones.</p>
+                    </div>
+                     <div class="service-item" data-aos="fade-up" data-aos-delay="0">
+                       <div class="icon-wrapper"> <i class="fab fa-github icon"></i></div>
+                        <h3>Free Hosting Setup</h3>
+                        <p>We deploy your site to GitHub Pages for reliable, free hosting.</p>
+                    </div>
+                     <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+                       <div class="icon-wrapper"> <i class="fas fa-globe icon"></i></div>
+                        <h3>Domain Help</h3>
+                        <p>Assistance with choosing and connecting your custom domain.</p>
+                    </div>
+                     <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon-wrapper"><i class="fas fa-hand-holding-usd icon"></i></div>
+                        <h3>Affordable Price</h3>
+                        <p>Professional quality without the high agency fees.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="content-section alt-bg">
+            <div class="container">
+                <h2 data-aos="fade-up">Transparent Pricing</h2>
+                 <p class="section-intro" data-aos="fade-up" data-aos-delay="100">Simple costs: Pay for the build work and your domain. Hosting is free!</p>
+                <div class="pricing-details">
+                    <div class="price-box" data-aos="fade-up" data-aos-delay="0">
+                        <h3><i class="fas fa-hammer"></i> Development Fee</h3>
+                        <p class="price">Starting at $99*</p>
+                        <p class="subtext">(One-time fee)</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Custom Static Build</li>
+                            <li><i class="fas fa-check"></i> Responsive Design</li>
+                            <li><i class="fas fa-check"></i> GitHub Pages Setup</li>
+                            <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+                        </ul>
+                    </div>
+                    <div class="price-box" data-aos="fade-up" data-aos-delay="150">
+                        <h3><i class="fas fa-globe-americas"></i> Domain Name</h3>
+                        <p class="price">~$15 / year</p>
+                         <p class="subtext">(Paid to registrar)</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Your Unique Web Address</li>
+                            <li><i class="fas fa-check"></i> e.g., yourname.com</li>
+                            <li><i class="fas fa-check"></i> We Help Connect It</li>
+                            <li><i class="fas fa-check"></i> Renews Annually</li>
+                        </ul>
+                    </div>
+                     <div class="price-box free-tier" data-aos="fade-up" data-aos-delay="300">
+                         <h3><i class="fas fa-server"></i> Hosting</h3>
+                        <p class="price">FREE</p>
+                         <p class="subtext">(via GitHub Pages)</p>
+                         <ul>
+                            <li><i class="fas fa-check"></i> Reliable & Fast</li>
+                            <li><i class="fas fa-check"></i> Secure (HTTPS)</li>
+                            <li><i class="fas fa-check"></i> No Monthly Costs</li>
+                            <li><i class="fas fa-check"></i> Managed via GitHub</li>
+                        </ul>
+                    </div>
+                </div>
+                 <p class="disclaimer" data-aos="fade-up">*Final price depends on project scope (e.g., number of pages, complexity). Contact for a precise quote.</p>
+                 <a href="#contact" class="btn btn-secondary" data-aos="fade-up">Request a Quote</a>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section id="why-us" class="content-section">
+            <div class="container">
+                <h2 data-aos="fade-up">Why Choose WebFramer?</h2>
+                <div class="why-us-grid">
+                    <div class="why-us-item" data-aos="fade-right" data-aos-delay="100">
+                        <i class="fas fa-bolt icon-feature"></i>
+                        <div>
+                            <h3>Speed & Security</h3>
+                            <p>Static sites are incredibly fast and less vulnerable than complex systems. Great for performance and peace of mind.</p>
+                        </div>
+                    </div>
+                     <div class="why-us-item" data-aos="fade-right" data-aos-delay="200">
+                         <i class="fas fa-leaf icon-feature"></i>
+                        <div>
+                            <h3>Simplicity & Focus</h3>
+                            <p>We build clean, minimalist websites that put your content first, without unnecessary clutter.</p>
+                        </div>
+                    </div>
+                    <div class="why-us-item" data-aos="fade-right" data-aos-delay="300">
+                       <i class="fas fa-dollar-sign icon-feature"></i>
+                        <div>
+                            <h3>Exceptional Value</h3>
+                            <p>Leveraging free hosting and efficient builds means professional quality at a very accessible price point.</p>
+                        </div>
+                    </div>
+                     <div class="why-us-item" data-aos="fade-right" data-aos-delay="400">
+                         <i class="fas fa-hands-helping icon-feature"></i>
+                        <div>
+                            <h3>Direct & Personal</h3>
+                            <p>Work directly with me. Clear communication and dedicated service to bring your vision online.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="content-section alt-bg">
+            <div class="container">
+                <h2 data-aos="fade-up">Ready to Get Started?</h2>
+                <p class="section-intro" data-aos="fade-up" data-aos-delay="100">Send a message via WhatsApp, Facebook, or Email. Let's chat about your project!</p>
+                <div class="contact-options" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="contact-link whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Me
+                    </a>
+                    <a href="YOUR_FACEBOOK_PROFILE_OR_PAGE_LINK" target="_blank" class="contact-link facebook">
+                        <i class="fab fa-facebook-f"></i> Find me on Facebook
+                    </a>
+                    <a href="mailto:your.email@example.com" class="contact-link email">
+                        <i class="fas fa-envelope"></i> Send an Email
+                    </a>
+                </div>
+                 <p class="contact-note" data-aos="fade-up" data-aos-delay="300">
+                     <i class="fas fa-exclamation-circle"></i> Please replace the placeholder links/details above with your actual contact information!
+                 </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year"></span> WebFramer. Simple Static Sites.</p>
+            <!-- Optional: Add relevant social links again if desired -->
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Your Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
