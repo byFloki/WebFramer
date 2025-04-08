@@ -1,259 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basic Meta Tags -->
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Set theme color for browser UI (esp. mobile) -->
-    <meta name="theme-color" content="#007bff"> <!-- Replace #YOUR_BRAND_COLOR with your main brand color hex code -->
+    <meta name="theme-color" content="#007ACC"> <!-- Updated Primary Blue -->
 
-    <!-- SEO Meta Tags -->
-    <title>WebFramer - Modern & Affordable Static Websites</title>
-    <meta name="description" content="Build your online presence with WebFramer. We create affordable, fast, modern static websites with free hosting. Minimalist design for maximum impact.">
-    <!-- Make sure this URL is the definitive version (e.g., https://webframer.site/ NOT http:// or with www if you don't use it) -->
-    <link rel="canonical" href="https://webframer.site/"> <!-- IMPORTANT: Replace with your actual canonical URL -->
-    <!-- Optional: Control how search engines crawl and index -->
+    <!-- SEO -->
+    <title>WebFramer - Fast, Affordable & Professional Static Websites</title>
+    <meta name="description" content="WebFramer builds high-performance, secure, and affordable static websites perfect for portfolios, small businesses, and landing pages. Free hosting setup included!">
+    <link rel="canonical" href="https://webframer.site/"> <!-- ☆★☆ REPLACE with your actual domain ☆★☆ -->
     <meta name="robots" content="index, follow, max-image-preview:large">
 
-    <!-- Favicons -->
-    <link rel="icon" href="/assets/favicon.ico" sizes="any"> <!-- Standard favicon -->
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"> <!-- Modern SVG favicon -->
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"> <!-- For iOS home screen -->
-    <!-- Optional: Link to a web app manifest file -->
-    <link rel="manifest" href="/assets/site.webmanifest">
+    <!-- Favicons (Place files in /assets/favicons/) -->
+    <link rel="icon" href="/assets/favicons/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
 
-    <!-- Open Graph / Facebook Meta Tags (for social sharing) -->
-    <meta property="og:title" content="WebFramer - Modern & Affordable Static Websites">
-    <meta property="og:description" content="Affordable, fast, modern static websites with free hosting. Minimalist design, maximum impact.">
-    <meta property="og:image" content="https://webframer.site/assets/preview-image.jpg"> <!-- IMPORTANT: Replace with URL to a compelling preview image (e.g., 1200x630px) -->
-    <meta property="og:url" content="https://webframer.site/"> <!-- IMPORTANT: Use the canonical URL here -->
+    <!-- Social Media Sharing (Open Graph & Twitter) -->
+    <meta property="og:title" content="WebFramer - Fast, Affordable & Professional Static Websites">
+    <meta property="og:description" content="Get a high-performance static website without the high cost. Free hosting setup!">
+    <meta property="og:image" content="https://webframer.site/assets/social-preview.jpg"> <!-- ☆★☆ REPLACE with URL to a 1200x630 image ☆★☆ -->
+    <meta property="og:url" content="https://webframer.site/"> <!-- ☆★☆ REPLACE ☆★☆ -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="WebFramer">
-
-    <!-- Twitter Card Meta Tags (for social sharing) -->
-    <meta name="twitter:card" content="summary_large_image"> <!-- Use 'summary' if your image isn't large/wide -->
-    <meta name="twitter:title" content="WebFramer - Modern & Affordable Static Websites">
-    <meta name="twitter:description" content="Affordable, fast, modern static websites with free hosting. Minimalist design, maximum impact.">
-    <meta name="twitter:image" content="https://webframer.site/assets/preview-image.jpg"> <!-- IMPORTANT: Use the same image URL as og:image -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WebFramer - Fast, Affordable & Professional Static Websites">
+    <meta name="twitter:description" content="Get a high-performance static website without the high cost. Free hosting setup!">
+    <meta name="twitter:image" content="https://webframer.site/assets/social-preview.jpg"> <!-- ☆★☆ REPLACE ☆★☆ -->
     <!-- Optional: <meta name="twitter:site" content="@YourTwitterHandle"> -->
-    <!-- Optional: <meta name="twitter:creator" content="@CreatorTwitterHandle"> -->
 
-    <!-- Resource Hints & Font Loading -->
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- External Stylesheets -->
-    <!-- Font Awesome Icons (SRI adds security by verifying the file hasn't been tampered with) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- AOS Animation Library CSS (Added SRI for security) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" integrity="sha384-eI7PSrQu3fJbfDKgdfVJ9KjLPH7KyOPsLq1hQ0QIiuYiT7NnKgv+NWnTDBrZVfI" crossorigin="anonymous">
-
-    <!-- Your Custom CSS (Load last to allow overriding library styles) -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Optional: Add JSON-LD Structured Data here -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "WebFramer",
-      "url": "https://webframer.site/",
-       "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://webframer.site/search?q={search_term_string}"
-         },
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
+    <!-- Stylesheets -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- Updated AOS Version -->
+    <link rel="stylesheet" href="style.css"> <!-- Your Custom CSS -->
 
 </head>
 <body>
 
-    <header data-aos="fade-down">
-        <nav class="container">
-            <a href="#" class="logo">WebFramer</a>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#why-us">Why Us?</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button id="menu-toggle" aria-label="Toggle Menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="container header-container">
+            <a href="#" class="logo" aria-label="WebFramer Home">WebFramer</a>
+            <nav class="main-navigation" aria-label="Main Navigation">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="main-menu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <ul id="main-menu" class="nav-menu" role="menubar">
+                    <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                    <li role="none"><a href="#process" role="menuitem">Process</a></li>
+                    <li role="none"><a href="#benefits" role="menuitem">Benefits</a></li>
+                    <li role="none"><a href="#pricing" role="menuitem">Pricing</a></li>
+                     <li role="none"><a href="#faq" role="menuitem">FAQ</a></li>
+                    <li role="none"><a href="#contact" role="menuitem" class="nav-contact-btn">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+
         <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-            <div class="container">
-                <h1 data-aos="fade-up">Simple. Fast. Affordable.</h1>
-                <p class="subtitle" data-aos="fade-up" data-aos-delay="100">Get a professional static website that looks great, loads quickly, and doesn't cost a fortune. Perfect for your online presence.</p>
-                <a href="#contact" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">Let's Build Your Site</a>
+        <section id="hero" class="hero-section" aria-labelledby="hero-heading">
+            <div class="container text-center">
+                <h1 id="hero-heading" data-aos="fade-up">Your Professional Website, Made Simple & Affordable.</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Fast, secure, custom-built static websites with free hosting setup. Perfect for making a great first impression online without breaking the bank.
+                </p>
+                <div class="hero-cta" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#contact" class="btn btn-primary">Get Your Free Quote</a>
+                    <a href="#benefits" class="btn btn-secondary">Learn Why Static</a>
+                </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="content-section">
+        <section id="services" class="content-section services-section" aria-labelledby="services-heading">
             <div class="container">
-                <h2 data-aos="fade-up">What We Do Best</h2>
-                <div class="service-grid">
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="0">
-                        <div class="icon-wrapper"><i class="fas fa-pencil-ruler icon"></i></div>
-                        <h3>Clean Design</h3>
-                        <p>Modern, minimalist websites focused on clarity and user experience.</p>
+                <h2 id="services-heading" class="section-title" data-aos="fade-up">What We Offer</h2>
+                <p class="section-intro" data-aos="fade-up" data-aos-delay="50">Core services to get your static site up and running smoothly.</p>
+                <div class="grid-3-col service-grid" role="list">
+                    <article class="card service-card" role="listitem" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-palette card-icon" aria-hidden="true"></i>
+                        <h3 class="card-title">Custom Design</h3>
+                        <p>Clean, modern, and responsive designs tailored to your brand and goals.</p>
+                    </article>
+                    <article class="card service-card" role="listitem" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-code card-icon" aria-hidden="true"></i>
+                        <h3 class="card-title">Static Site Development</h3>
+                        <p>Efficient build using HTML, CSS & minimal JS for peak performance and security.</p>
+                    </article>
+                    <article class="card service-card" role="listitem" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fab fa-github card-icon" aria-hidden="true"></i>
+                        <h3 class="card-title">GitHub Pages Hosting</h3>
+                        <p>Setup on reliable, fast, and free hosting, including HTTPS.</p>
+                    </article>
+                    <article class="card service-card" role="listitem" data-aos="fade-up" data-aos-delay="100">
+                         <i class="fas fa-globe card-icon" aria-hidden="true"></i>
+                        <h3 class="card-title">Domain Connection</h3>
+                        <p>Assistance connecting your custom domain name (e.g., yourname.com).</p>
+                    </article>
+                     <article class="card service-card" role="listitem" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-tachometer-alt card-icon" aria-hidden="true"></i>
+                        <h3 class="card-title">Performance Focus</h3>
+                        <p>Optimized code and structure for fast loading times (great for SEO).</p>
+                    </article>
+                     <article class="card service-card" role="listitem" data-aos="fade-up" data-aos-delay="300">
+                         <i class="fas fa-headset card-icon" aria-hidden="true"></i>
+                        <h3 class="card-title">Direct Support</h3>
+                        <p>Clear communication and support directly from the builder.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="content-section process-section alt-bg" aria-labelledby="process-heading">
+            <div class="container">
+                <h2 id="process-heading" class="section-title" data-aos="fade-up">Our Simple Process</h2>
+                <p class="section-intro" data-aos="fade-up" data-aos-delay="50">Getting your website online is straightforward.</p>
+                <div class="process-steps">
+                    <!-- Step 1 -->
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Consultation</h3>
+                            <p>We discuss your needs, goals, content, and design ideas via WhatsApp, email or call.</p>
+                        </div>
                     </div>
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                       <div class="icon-wrapper"> <i class="fas fa-code icon"></i></div>
-                        <h3>Static Site Build</h3>
-                        <p>Fast, secure HTML, CSS & JS sites. No complex backends needed.</p>
+                    <!-- Step 2 -->
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="200">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Quote & Design</h3>
+                            <p>You receive a clear quote. Upon agreement, we create a design mock-up for your approval.</p>
+                        </div>
                     </div>
-                    <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                       <div class="icon-wrapper"> <i class="fas fa-mobile-alt icon"></i></div>
-                        <h3>Responsive Layout</h3>
-                        <p>Perfect viewing experience on desktops, tablets, and phones.</p>
+                    <!-- Step 3 -->
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Build & Review</h3>
+                            <p>We build the static site based on the approved design. You review and request minor revisions.</p>
+                        </div>
                     </div>
-                     <div class="service-item" data-aos="fade-up" data-aos-delay="0">
-                       <div class="icon-wrapper"> <i class="fab fa-github icon"></i></div>
-                        <h3>Free Hosting Setup</h3>
-                        <p>We deploy your site to GitHub Pages for reliable, free hosting.</p>
-                    </div>
-                     <div class="service-item" data-aos="fade-up" data-aos-delay="100">
-                       <div class="icon-wrapper"> <i class="fas fa-globe icon"></i></div>
-                        <h3>Domain Help</h3>
-                        <p>Assistance with choosing and connecting your custom domain.</p>
-                    </div>
-                     <div class="service-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon-wrapper"><i class="fas fa-hand-holding-usd icon"></i></div>
-                        <h3>Affordable Price</h3>
-                        <p>Professional quality without the high agency fees.</p>
+                    <!-- Step 4 -->
+                    <div class="process-step" data-aos="fade-right" data-aos-delay="400">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Deploy & Launch</h3>
+                            <p>We deploy the site to GitHub Pages, connect your domain (if applicable), and you're live!</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Benefits of Static Section -->
+        <section id="benefits" class="content-section benefits-section" aria-labelledby="benefits-heading">
+            <div class="container">
+                 <h2 id="benefits-heading" class="section-title" data-aos="fade-up">Why Choose a Static Website?</h2>
+                 <p class="section-intro" data-aos="fade-up" data-aos-delay="50">Static sites offer powerful advantages, especially for cost-conscious clients.</p>
+                 <div class="grid-2-col benefits-grid">
+                    <div class="benefit-item" data-aos="fade-left" data-aos-delay="100">
+                        <i class="fas fa-rocket benefit-icon" aria-hidden="true"></i>
+                        <div>
+                            <h4>Blazing Fast Speed</h4>
+                            <p>No database lookups or complex processing. Files are served instantly, improving user experience and SEO.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item" data-aos="fade-left" data-aos-delay="200">
+                         <i class="fas fa-shield-alt benefit-icon" aria-hidden="true"></i>
+                         <div>
+                            <h4>Enhanced Security</h4>
+                            <p>No server-side code or databases means a dramatically smaller attack surface. Much harder to hack.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item" data-aos="fade-left" data-aos-delay="300">
+                         <i class="fas fa-dollar-sign benefit-icon" aria-hidden="true"></i>
+                        <div>
+                            <h4>Lower Costs</h4>
+                            <p>Free hosting options (like GitHub Pages) and simpler development mean significant cost savings.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item" data-aos="fade-left" data-aos-delay="400">
+                        <i class="fas fa-cogs benefit-icon" aria-hidden="true"></i>
+                        <div>
+                            <h4>Simplicity & Reliability</h4>
+                            <p>Fewer moving parts mean less can go wrong. Highly reliable and easy to maintain.</p>
+                        </div>
+                    </div>
+                 </div>
             </div>
         </section>
 
         <!-- Pricing Section -->
-        <section id="pricing" class="content-section alt-bg">
+        <section id="pricing" class="content-section pricing-section alt-bg" aria-labelledby="pricing-heading">
             <div class="container">
-                <h2 data-aos="fade-up">Transparent Pricing</h2>
-                 <p class="section-intro" data-aos="fade-up" data-aos-delay="100">Simple costs: Pay for the build work and your domain. Hosting is free!</p>
-                <div class="pricing-details">
-                    <div class="price-box" data-aos="fade-up" data-aos-delay="0">
-                        <h3><i class="fas fa-hammer"></i> Development Fee</h3>
-                        <p class="price">Starting at $99*</p>
-                        <p class="subtext">(One-time fee)</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Custom Static Build</li>
-                            <li><i class="fas fa-check"></i> Responsive Design</li>
-                            <li><i class="fas fa-check"></i> GitHub Pages Setup</li>
-                            <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+                <h2 id="pricing-heading" class="section-title" data-aos="fade-up">Affordable & Transparent Pricing</h2>
+                <p class="section-intro" data-aos="fade-up" data-aos-delay="50">No hidden fees. Pay for the work, your domain, and enjoy free hosting.</p>
+                 <div class="grid-3-col pricing-grid">
+                    <!-- Price Card 1: Build Fee -->
+                    <article class="card price-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="price-header">
+                            <i class="fas fa-pencil-ruler card-icon" aria-hidden="true"></i>
+                            <h3 class="card-title">Build Fee</h3>
+                        </div>
+                        <div class="price-tag">Starting at $99</div>
+                        <p class="price-term">(One-time)</p>
+                        <ul class="price-features" role="list">
+                            <li role="listitem">Custom Design & Development</li>
+                            <li role="listitem">Responsive on All Devices</li>
+                            <li role="listitem">Content Integration</li>
+                            <li role="listitem">Basic On-Page SEO</li>
+                            <li role="listitem">Up to 3 Pages Included*</li>
                         </ul>
-                    </div>
-                    <div class="price-box" data-aos="fade-up" data-aos-delay="150">
-                        <h3><i class="fas fa-globe-americas"></i> Domain Name</h3>
-                        <p class="price">~$15 / year</p>
-                         <p class="subtext">(Paid to registrar)</p>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Your Unique Web Address</li>
-                            <li><i class="fas fa-check"></i> e.g., yourname.com</li>
-                            <li><i class="fas fa-check"></i> We Help Connect It</li>
-                            <li><i class="fas fa-check"></i> Renews Annually</li>
+                        <a href="#contact" class="btn btn-secondary price-btn">Get Custom Quote</a>
+                    </article>
+                    <!-- Price Card 2: Domain -->
+                    <article class="card price-card" data-aos="zoom-in" data-aos-delay="200">
+                         <div class="price-header">
+                            <i class="fas fa-globe card-icon" aria-hidden="true"></i>
+                            <h3 class="card-title">Domain Name</h3>
+                        </div>
+                        <div class="price-tag">~$10-20</div>
+                        <p class="price-term">(Per Year)</p>
+                         <ul class="price-features" role="list">
+                            <li>Your Unique Web Address</li>
+                            <li>Paid Directly to Registrar (e.g., GoDaddy, Namecheap)</li>
+                            <li>We Assist with Setup</li>
+                            <li>Builds Brand Credibility</li>
+                            <li>Renews Annually</li>
                         </ul>
-                    </div>
-                     <div class="price-box free-tier" data-aos="fade-up" data-aos-delay="300">
-                         <h3><i class="fas fa-server"></i> Hosting</h3>
-                        <p class="price">FREE</p>
-                         <p class="subtext">(via GitHub Pages)</p>
-                         <ul>
-                            <li><i class="fas fa-check"></i> Reliable & Fast</li>
-                            <li><i class="fas fa-check"></i> Secure (HTTPS)</li>
-                            <li><i class="fas fa-check"></i> No Monthly Costs</li>
-                            <li><i class="fas fa-check"></i> Managed via GitHub</li>
+                         <a href="#contact" class="btn btn-secondary price-btn">Discuss Domain</a>
+                    </article>
+                    <!-- Price Card 3: Hosting -->
+                    <article class="card price-card free-tier" data-aos="zoom-in" data-aos-delay="300">
+                        <span class="free-badge">FREE!</span>
+                         <div class="price-header">
+                             <i class="fab fa-github card-icon" aria-hidden="true"></i>
+                            <h3 class="card-title">Hosting</h3>
+                        </div>
+                        <div class="price-tag">$0</div>
+                        <p class="price-term">(Ongoing)</p>
+                        <ul class="price-features" role="list">
+                            <li>Via GitHub Pages</li>
+                            <li>Fast Global CDN</li>
+                            <li>Secure (HTTPS Included)</li>
+                            <li>Highly Reliable</li>
+                            <li>No Monthly Hosting Bills!</li>
                         </ul>
-                    </div>
+                        <span class="btn btn-secondary price-btn disabled-btn">Included in Build</span>
+                    </article>
                 </div>
-                 <p class="disclaimer" data-aos="fade-up">*Final price depends on project scope (e.g., number of pages, complexity). Contact for a precise quote.</p>
-                 <a href="#contact" class="btn btn-secondary" data-aos="fade-up">Request a Quote</a>
+                <p class="pricing-disclaimer" data-aos="fade-up">*Additional pages or complex features may increase the build fee. Contact us for a detailed quote based on your specific project.</p>
             </div>
         </section>
 
-        <!-- Why Us Section -->
-        <section id="why-us" class="content-section">
+        <!-- FAQ Section -->
+        <section id="faq" class="content-section faq-section" aria-labelledby="faq-heading">
             <div class="container">
-                <h2 data-aos="fade-up">Why Choose WebFramer?</h2>
-                <div class="why-us-grid">
-                    <div class="why-us-item" data-aos="fade-right" data-aos-delay="100">
-                        <i class="fas fa-bolt icon-feature"></i>
-                        <div>
-                            <h3>Speed & Security</h3>
-                            <p>Static sites are incredibly fast and less vulnerable than complex systems. Great for performance and peace of mind.</p>
+                <h2 id="faq-heading" class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
+                 <div class="faq-accordion">
+                    <!-- FAQ Item 1 -->
+                    <details class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <summary class="faq-question">
+                            What exactly is a "static" website?
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>A static website consists of pre-built HTML, CSS, and JavaScript files that are delivered directly to the user's browser exactly as stored. Unlike dynamic sites (like WordPress), they don't need a database or server-side processing to generate content on the fly. This makes them inherently faster, more secure, and cheaper to host.</p>
                         </div>
-                    </div>
-                     <div class="why-us-item" data-aos="fade-right" data-aos-delay="200">
-                         <i class="fas fa-leaf icon-feature"></i>
-                        <div>
-                            <h3>Simplicity & Focus</h3>
-                            <p>We build clean, minimalist websites that put your content first, without unnecessary clutter.</p>
+                    </details>
+                    <!-- FAQ Item 2 -->
+                     <details class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                        <summary class="faq-question">
+                            How long does it take to build a website?
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Turnaround time depends on the project complexity and how quickly you provide content/feedback. A typical small site (1-3 pages) often takes 1-5 days from design approval to launch, assuming clear communication.</p>
                         </div>
-                    </div>
-                    <div class="why-us-item" data-aos="fade-right" data-aos-delay="300">
-                       <i class="fas fa-dollar-sign icon-feature"></i>
-                        <div>
-                            <h3>Exceptional Value</h3>
-                            <p>Leveraging free hosting and efficient builds means professional quality at a very accessible price point.</p>
+                    </details>
+                     <!-- FAQ Item 3 -->
+                     <details class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <summary class="faq-question">
+                            Can I update the website myself later?
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>Updating content on a static site usually requires editing the HTML code directly. For simple text changes, we can show you how if you're comfortable. For significant updates or if you prefer not to touch code, we offer affordable maintenance packages or can perform updates on an hourly basis.</p>
+                             <p>Alternatively, for sites requiring frequent updates by non-technical users, we can integrate a 'headless CMS' (like Contentful, Sanity, or Decap CMS) for an additional fee, allowing you to edit content through a user-friendly interface.</p>
                         </div>
-                    </div>
-                     <div class="why-us-item" data-aos="fade-right" data-aos-delay="400">
-                         <i class="fas fa-hands-helping icon-feature"></i>
-                        <div>
-                            <h3>Direct & Personal</h3>
-                            <p>Work directly with me. Clear communication and dedicated service to bring your vision online.</p>
+                    </details>
+                    <!-- FAQ Item 4 -->
+                    <details class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                        <summary class="faq-question">
+                            What do you need from me to start?
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
+                        </summary>
+                        <div class="faq-answer">
+                            <p>To start, we need a clear idea of your goals, target audience, the content (text, images, logo) for each page, any design preferences or examples you like, and your domain name ideas (if you don't have one yet).</p>
                         </div>
-                    </div>
-                </div>
+                    </details>
+                 </div>
             </div>
         </section>
+
+
+        <!-- ☆★☆ Placeholder Sections - Strongly Recommended to Add Real Content ☆★☆ -->
+        
+        <section id="portfolio" class="content-section portfolio-section alt-bg" aria-labelledby="portfolio-heading">
+            <div class="container">
+                <h2 id="portfolio-heading" class="section-title" data-aos="fade-up">Our Work</h2>
+                <p class="section-intro" data-aos="fade-up" data-aos-delay="50">Check out some examples of websites we've built.</p>
+                <div class="grid-3-col portfolio-grid">
+                    </div>
+            </div>
+        </section>
+
 
         <!-- Contact Section -->
-        <section id="contact" class="content-section alt-bg">
-            <div class="container">
-                <h2 data-aos="fade-up">Ready to Get Started?</h2>
-                <p class="section-intro" data-aos="fade-up" data-aos-delay="100">Send a message via WhatsApp, Facebook, or Email. Let's chat about your project!</p>
-                <div class="contact-options" data-aos="fade-up" data-aos-delay="200">
-                    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="contact-link whatsapp">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Me
+        <section id="contact" class="content-section contact-section" aria-labelledby="contact-heading">
+            <div class="container text-center">
+                <h2 id="contact-heading" class="section-title" data-aos="fade-up">Let's Build Your Website!</h2>
+                <p class="section-intro narrow-intro" data-aos="fade-up" data-aos-delay="50">
+                    Ready to get started or have questions? Reach out via your preferred method. We're happy to help.
+                </p>
+                <div class="contact-options-wrapper" data-aos="fade-up" data-aos-delay="100">
+                     <a href="https://wa.me/94786637511" target="_blank" rel="noopener noreferrer" class="contact-option whatsapp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Chat on WhatsApp
                     </a>
-                    <a href="YOUR_FACEBOOK_PROFILE_OR_PAGE_LINK" target="_blank" class="contact-link facebook">
-                        <i class="fab fa-facebook-f"></i> Find me on Facebook
+                    <a href="YOUR_FACEBOOK_LINK" target="_blank" rel="noopener noreferrer" class="contact-option facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i> Message on Facebook
                     </a>
-                    <a href="mailto:your.email@example.com" class="contact-link email">
-                        <i class="fas fa-envelope"></i> Send an Email
+                    <a href="mailto:contact@webframer.site" class="contact-option email">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Send an Email
                     </a>
                 </div>
-                 <p class="contact-note" data-aos="fade-up" data-aos-delay="300">
-                     <i class="fas fa-exclamation-circle"></i> Please replace the placeholder links/details above with your actual contact information!
-                 </p>
             </div>
         </section>
+
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
         <div class="container">
-            <p>© <span id="year"></span> WebFramer. Simple Static Sites.</p>
-            <!-- Optional: Add relevant social links again if desired -->
+             <p>© <span id="year"></span> WebFramer. All Rights Reserved.</p>
+             <!-- Optional: Add footer links -->
+             <!-- <nav class="footer-nav" aria-label="Footer Navigation">
+                 <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+             </nav> -->
         </div>
     </footer>
 
-    <!-- AOS Animation Library JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <!-- JavaScript -->
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <!-- Your Custom JS -->
     <script src="script.js"></script>
+
 </body>
 </html>
