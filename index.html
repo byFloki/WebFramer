@@ -1,24 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WebFramer: Affordable, fast, and modern static websites with free hosting. Minimalist design, maximum impact.">
-    <title>WebFramer - Modern & Affordable Static Websites</title>
+    <!-- Set theme color for browser UI (esp. mobile) -->
+    <meta name="theme-color" content="#007bff"> <!-- Replace #YOUR_BRAND_COLOR with your main brand color hex code -->
 
-    <!-- Google Fonts -->
+    <!-- SEO Meta Tags -->
+    <title>WebFramer - Modern & Affordable Static Websites</title>
+    <meta name="description" content="Build your online presence with WebFramer. We create affordable, fast, modern static websites with free hosting. Minimalist design for maximum impact.">
+    <!-- Make sure this URL is the definitive version (e.g., https://webframer.site/ NOT http:// or with www if you don't use it) -->
+    <link rel="canonical" href="https://webframer.site/"> <!-- IMPORTANT: Replace with your actual canonical URL -->
+    <!-- Optional: Control how search engines crawl and index -->
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any"> <!-- Standard favicon -->
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"> <!-- Modern SVG favicon -->
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"> <!-- For iOS home screen -->
+    <!-- Optional: Link to a web app manifest file -->
+    <link rel="manifest" href="/assets/site.webmanifest">
+
+    <!-- Open Graph / Facebook Meta Tags (for social sharing) -->
+    <meta property="og:title" content="WebFramer - Modern & Affordable Static Websites">
+    <meta property="og:description" content="Affordable, fast, modern static websites with free hosting. Minimalist design, maximum impact.">
+    <meta property="og:image" content="https://webframer.site/assets/preview-image.jpg"> <!-- IMPORTANT: Replace with URL to a compelling preview image (e.g., 1200x630px) -->
+    <meta property="og:url" content="https://webframer.site/"> <!-- IMPORTANT: Use the canonical URL here -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="WebFramer">
+
+    <!-- Twitter Card Meta Tags (for social sharing) -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- Use 'summary' if your image isn't large/wide -->
+    <meta name="twitter:title" content="WebFramer - Modern & Affordable Static Websites">
+    <meta name="twitter:description" content="Affordable, fast, modern static websites with free hosting. Minimalist design, maximum impact.">
+    <meta name="twitter:image" content="https://webframer.site/assets/preview-image.jpg"> <!-- IMPORTANT: Use the same image URL as og:image -->
+    <!-- Optional: <meta name="twitter:site" content="@YourTwitterHandle"> -->
+    <!-- Optional: <meta name="twitter:creator" content="@CreatorTwitterHandle"> -->
+
+    <!-- Resource Hints & Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- External Stylesheets -->
+    <!-- Font Awesome Icons (SRI adds security by verifying the file hasn't been tampered with) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- AOS Animation Library CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS Animation Library CSS (Added SRI for security) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" integrity="sha384-eI7PSrQu3fJbfDKgdfVJ9KjLPH7KyOPsLq1hQ0QIiuYiT7NnKgv+NWnTDBrZVfI" crossorigin="anonymous">
 
-    <!-- Your Custom CSS -->
+    <!-- Your Custom CSS (Load last to allow overriding library styles) -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Optional: Add JSON-LD Structured Data here -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "WebFramer",
+      "url": "https://webframer.site/",
+       "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://webframer.site/search?q={search_term_string}"
+         },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 
 </head>
 <body>
