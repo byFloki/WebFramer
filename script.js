@@ -1,75 +1,94 @@
-// Initialize AOS (Animate on Scroll) Library
-AOS.init({
-    duration: 800, // Animation duration in milliseconds
-    offset: 100,    // Offset (in px) from the original trigger point
-    once: true,     // Whether animation should happen only once - while scrolling down
-    easing: 'ease-in-out', // Default easing
-});
+"use strict"; // Enforce stricter parsing and error handling
 
-// Smooth Scrolling for internal links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        // Check if the link is just the base URL '#' (often used for top links)
-        if (this.getAttribute('href') === '#') {
-             e.preventDefault();
-             window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-             });
-             // Close mobile menu if open
-            const navMenu = document.querySelector('header nav ul');
-            if (navMenu && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
+document.addEventListener('DOMContentLoaded', () => {
+
+    console.log("WebFramer Script Loaded"); // Check if script runs
+
+    // --- AOS Initialization ---
+    try {
+        AOS.init({
+            duration: 700,      // Duration of animation
+            offset: 80,         // Offset (in px) from the original trigger point
+            once: true,         // Animate elements only once
+            easing: 'ease-in-out', // Default easing
+            // disable: 'phone', // Optional: disable AOS on smaller screens
+        });
+        console.log("AOS Initialized");
+    } catch (e) {
+        console.error("AOS Initialization failed:", e);
+    }
+
+
+    // --- Mobile Menu Toggle ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainMenu = document.getElementById('main-menu');
+
+    if (menuToggle && mainMenu) {
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            mainMenu.classList.toggle('active');
+            // Optional: Toggle body scroll lock
+            // document.body.classList.toggle('no-scroll', !isExpanded);
+        });
+
+        // Close menu if clicking outside
+        document.addEventListener('click', (event) => {
+            const isClickInsideNav = mainMenu.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+
+            if (mainMenu.classList.contains('active') && !isClickInsideNav && !isClickOnToggle) {
+                mainMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                // document.body.classList.remove('no-scroll');
             }
-             return; // Stop further processing for '#' link
-        }
+        });
+    } else {
+        console.warn("Menu toggle or main menu element not found.");
+    }
 
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
 
-        if (targetElement) {
-            e.preventDefault(); // Prevent default only if target exists
+    // --- Smooth Scrolling ---
+    const headerHeight = document.querySelector('.site-header')?.offsetHeight || 70; // Get header height dynamically or fallback
 
-            const headerOffset = 75; // Height of your fixed header
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
 
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
+            // Ensure it's an internal link and not just "#"
+            if (targetId && targetId.length > 1 && targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
 
-            // Close mobile menu if open after clicking a link
-            const navMenu = document.querySelector('header nav ul');
-             if (navMenu && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
+                if (targetElement) {
+                    e.preventDefault();
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+
+                    // Close mobile menu if open after clicking a link
+                    if (mainMenu && mainMenu.classList.contains('active')) {
+                         mainMenu.classList.remove('active');
+                         menuToggle.setAttribute('aria-expanded', 'false');
+                         // document.body.classList.remove('no-scroll');
+                    }
+                } else {
+                    console.warn(`Smooth scroll target not found for ID: ${targetId}`);
+                }
             }
-        }
+        });
     });
-});
 
-// Update Footer Year Automatically
-const yearSpan = document.getElementById('year');
-if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-}
 
-// Mobile Menu Toggle
-const menuToggle = document.getElementById('menu-toggle');
-const navMenu = document.querySelector('header nav ul');
+    // --- Footer Year ---
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    } else {
+        console.warn("Year span element not found.");
+    }
 
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active'); // Toggles the 'active' class on the nav ul
-    });
-}
-
-// Optional: Close mobile menu if clicked outside
-document.addEventListener('click', function(event) {
-  const isClickInsideNav = navMenu.contains(event.target);
-  const isClickOnToggle = menuToggle.contains(event.target);
-
-  if (!isClickInsideNav && !isClickOnToggle && navMenu.classList.contains('active')) {
-    navMenu.classList.remove('active');
-  }
-});
+}); // End DOMContentLoaded
