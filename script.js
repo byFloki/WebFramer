@@ -20,42 +20,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- Mobile Menu Toggle ---
-    const menuToggle = document.getElementById('menu-toggle');
-    const mainMenu = document.getElementById('main-menu');
+    // MODIFIED: Select by class name used in CSS
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu'); // MODIFIED: Select by class name used in CSS & renamed variable
 
-    if (menuToggle && mainMenu) {
+    if (menuToggle && navMenu) { // MODIFIED: Check updated variable name
+        console.log("Menu toggle and nav menu found."); // Added confirmation
         menuToggle.addEventListener('click', () => {
             const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
             menuToggle.setAttribute('aria-expanded', !isExpanded);
-            mainMenu.classList.toggle('active');
+            navMenu.classList.toggle('active'); // MODIFIED: Use updated variable name
+            console.log("Menu toggled. Active class:", navMenu.classList.contains('active')); // Added confirmation
             // Optional: Toggle body scroll lock
             // document.body.classList.toggle('no-scroll', !isExpanded);
+            // If using scroll lock, make sure you have CSS for .no-scroll { overflow: hidden; }
         });
 
         // Close menu if clicking outside
         document.addEventListener('click', (event) => {
-            const isClickInsideNav = mainMenu.contains(event.target);
+            // MODIFIED: Check updated variable names
+            if (!navMenu.classList.contains('active')) {
+                return; // Don't do anything if menu is already closed
+            }
+
+            const isClickInsideNav = navMenu.contains(event.target);
             const isClickOnToggle = menuToggle.contains(event.target);
 
-            if (mainMenu.classList.contains('active') && !isClickInsideNav && !isClickOnToggle) {
-                mainMenu.classList.remove('active');
+            if (!isClickInsideNav && !isClickOnToggle) {
+                navMenu.classList.remove('active'); // MODIFIED: Use updated variable name
                 menuToggle.setAttribute('aria-expanded', 'false');
+                console.log("Menu closed via outside click."); // Added confirmation
                 // document.body.classList.remove('no-scroll');
             }
         });
     } else {
-        console.warn("Menu toggle or main menu element not found.");
+        // Be more specific about what wasn't found
+        if (!menuToggle) console.warn("Menu toggle element (.menu-toggle) not found.");
+        if (!navMenu) console.warn("Nav menu element (.nav-menu) not found.");
     }
 
 
     // --- Smooth Scrolling ---
-    const headerHeight = document.querySelector('.site-header')?.offsetHeight || 70; // Get header height dynamically or fallback
+    // Ensure header height calculation happens *after* potential layout shifts
+    let headerHeight = 70; // Default fallback
+    const siteHeader = document.querySelector('.site-header');
+    if (siteHeader) {
+        // Recalculate header height on resize potentially, if header height changes
+        // For simplicity, calculate once on load, ensure CSS handles sticky height well
+        headerHeight = siteHeader.offsetHeight;
+    } else {
+        console.warn("Site header (.site-header) not found for height calculation.");
+    }
+
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
 
-            // Ensure it's an internal link and not just "#"
+            // Ensure it's an internal link and not just "#" or empty
             if (targetId && targetId.length > 1 && targetId.startsWith('#')) {
                 const targetElement = document.querySelector(targetId);
 
@@ -70,15 +92,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
 
                     // Close mobile menu if open after clicking a link
-                    if (mainMenu && mainMenu.classList.contains('active')) {
-                         mainMenu.classList.remove('active');
-                         menuToggle.setAttribute('aria-expanded', 'false');
+                    // MODIFIED: Check updated variable names
+                    if (navMenu && navMenu.classList.contains('active')) {
+                         navMenu.classList.remove('active');
+                         // Also ensure the toggle button state is reset
+                         if (menuToggle) {
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                         }
+                         console.log("Menu closed via nav link click."); // Added confirmation
                          // document.body.classList.remove('no-scroll');
                     }
                 } else {
                     console.warn(`Smooth scroll target not found for ID: ${targetId}`);
                 }
             }
+             // Optional: If it's a non-hash link within the mobile menu, you might still want to close it
+             else if (navMenu && navMenu.contains(this) && navMenu.classList.contains('active')) {
+                 navMenu.classList.remove('active');
+                 if (menuToggle) {
+                     menuToggle.setAttribute('aria-expanded', 'false');
+                 }
+                 console.log("Menu closed via non-anchor link click.");
+                 // document.body.classList.remove('no-scroll');
+             }
         });
     });
 
@@ -88,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     } else {
-        console.warn("Year span element not found.");
+        console.warn("Year span element (#year) not found.");
     }
 
 }); // End DOMContentLoaded
